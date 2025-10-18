@@ -20,10 +20,10 @@ function convertValue() {
   }
 
   if (currencySelect.value == "libra") {
-    currencyValueConverted.innerHTML = new Intl.NumberFormat("en-UK", {
+    currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
       style: "currency",
       currency: "GBP",
-    });
+    }).format(inputCurrencyValue / libratoday);
   }
 
   if (currencySelect.value == "euro") {
@@ -49,6 +49,11 @@ function changeCurrency() {
   if (currencySelect.value == "euro") {
     currencyName.innerHTML = "Euro";
     currencyImage.src = "./assets/euro.png";
+  }
+
+  if (currencySelect.value == "libra") {
+    currencyName.innerHTML = "Luro";
+    currencyImage.src = "./assets/libra.png";
   }
 
   convertValue();
