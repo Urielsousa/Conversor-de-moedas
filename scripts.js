@@ -10,12 +10,20 @@ function convertValue() {
   );
   const dolarToday = 5.2;
   const eurotoday = 6.22;
+  const libratoday = 7.23;
   const convertedValue = inputCurrencyValue / dolarToday;
   if (currencySelect.value == "dolar") {
     currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     }).format(inputCurrencyValue / dolarToday);
+  }
+
+  if (currencySelect.value == "libra") {
+    currencyValueConverted.innerHTML = new Intl.NumberFormat("en-UK", {
+      style: "currency",
+      currency: "GBP",
+    });
   }
 
   if (currencySelect.value == "euro") {
@@ -41,6 +49,11 @@ function changeCurrency() {
   if (currencySelect.value == "euro") {
     currencyName.innerHTML = "Euro";
     currencyImage.src = "./assets/euro.png";
+
+    if (currencySelect.value == "libra") {
+      currencyName.innerHTML = "LIbra";
+      currencyImage.src = "./assets/libra.png";
+    }
   }
 
   convertValue();
