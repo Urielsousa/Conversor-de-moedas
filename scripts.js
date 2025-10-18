@@ -5,15 +5,22 @@ function convertValue() {
   const currencyValueToConvert = document.querySelector(
     ".currency-value-to-convert"
   ); // valor em real //
-  const convertedCurrencyValue = document.querySelector(
-    ".converted-currency-value" // outras moedas
+  const currencyValueConverted = document.querySelector(
+    ".currency-value-converted" // outras moedas
   );
-
   const dolarToday = 5.2;
-  const covnertedValue = inputCurrencyValue / dolarToday;
-  console.log(covnertedValue);
+  const eurotoday = 6.22;
+  const convertedValue = inputCurrencyValue / dolarToday;
+  console.log(convertedValue);
+  currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-Br", {
+    style: "currency",
+    currency: "BRL",
+  }).format(inputCurrencyValue);
 
- currencyValueToConvert.innerHTML = inputCurrencyValue;
+  currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(convertedValue);
 }
 
 convertButton.addEventListener("click", convertValue);
