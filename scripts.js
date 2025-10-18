@@ -49,11 +49,6 @@ function changeCurrency() {
   if (currencySelect.value == "euro") {
     currencyName.innerHTML = "Euro";
     currencyImage.src = "./assets/euro.png";
-
-    if (currencySelect.value == "libra") {
-      currencyName.innerHTML = "LIbra";
-      currencyImage.src = "./assets/libra.png";
-    }
   }
 
   convertValue();
